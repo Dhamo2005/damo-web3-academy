@@ -1,6 +1,13 @@
-import Navbar from '../components/Navbar';
+import Head from 'next/head';
+import Navbar from '../components/navbar';
+
 export default function Home() {
   return <>
-  <Navbar />
+  <Head>
+    <title>Home Page | Damo Softwares</title>
+  </Head>
+  <body className='antialiased'>
+    <Navbar />
+  </body>
   </>;
 }
