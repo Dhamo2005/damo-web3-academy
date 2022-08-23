@@ -6,8 +6,6 @@ export default function Home() {
   <Head>
     <title>Home Page | Damo Softwares</title>
   </Head>
-  <body className='antialiased'>
     <Navbar />
-  </body>
   </>;
 }
