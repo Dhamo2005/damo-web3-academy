@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -7,6 +6,7 @@ import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import { AppBar, Toolbar } from "@mui/material";
 import Image from "next/image";
+import Logo from "../assets/images/logos/logo-1.svg"
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -27,6 +27,7 @@ const Search = styled("div")(({ theme }) => ({
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
+  backgroundColor:"#007acc"
 });
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -57,7 +58,7 @@ function test() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <StyledToolbar>
+        <StyledToolbar varient="dense">
           <Box sx={{ display: "flex", alignItems: "center" }}>
           <IconButton
             edge="start"
@@ -67,9 +68,24 @@ function test() {
           >
             <MenuIcon />
           </IconButton>
-          <Image src="" />
+          <Image
+        alt="Damo Web 3.0 Academy"
+        src={Logo}
+        width={150}
+        height={25}
+      />
           </Box>
-          <Search>
+          <Box sx={{ display: "flex" }}>
+            
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ display: {sm: "flex", md:"none"} }}
+          >
+            <SearchOutlinedIcon />
+          </IconButton>
+          <Search sx={{ display: {sm: "none", md:"flex"} }}>
             <SearchIconWrapper>
               <SearchOutlinedIcon />
             </SearchIconWrapper>
@@ -78,6 +94,8 @@ function test() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+
+          </Box>
         </StyledToolbar>
       </AppBar>
     </Box>
