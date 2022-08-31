@@ -4,10 +4,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import { AppBar, Toolbar } from "@mui/material";
+import { Alert, AppBar, Toolbar } from "@mui/material";
 import Image from "next/image";
 import Logo from "../assets/images/logos/logo-1.svg"
-
+import { NotificationImportant } from "@mui/icons-material/NotificationImportant";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -85,7 +85,15 @@ function test() {
           >
             <SearchOutlinedIcon />
           </IconButton>
-          <Search sx={{ display: {sm: "none", md:"flex"} }}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ display: {sm: "flex", md:"none"} }}
+          >
+            <NotificationImportant />
+          </IconButton>
+          {/* <Search sx={{ display: {sm: "none", md:"flex"} }}>
             <SearchIconWrapper>
               <SearchOutlinedIcon />
             </SearchIconWrapper>
@@ -93,7 +101,7 @@ function test() {
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />
-          </Search>
+          </Search> */}
 
           </Box>
         </StyledToolbar>
