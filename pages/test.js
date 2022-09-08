@@ -4,10 +4,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import { Alert, AppBar, Toolbar } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import Image from "next/image";
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import Logo from "../assets/images/logos/logo-1.svg"
-import { NotificationImportant } from "@mui/icons-material/NotificationImportant";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -71,7 +71,7 @@ function test() {
           <Image
         alt="Damo Web 3.0 Academy"
         src={Logo}
-        width={150}
+        width={200}
         height={25}
       />
           </Box>
@@ -89,9 +89,10 @@ function test() {
             edge="start"
             color="inherit"
             aria-label="menu"
+            marginLeft="10.4px"
             sx={{ display: {sm: "flex", md:"none"} }}
           >
-            <NotificationImportant />
+            <NotificationsIcon />
           </IconButton>
           {/* <Search sx={{ display: {sm: "none", md:"flex"} }}>
             <SearchIconWrapper>
