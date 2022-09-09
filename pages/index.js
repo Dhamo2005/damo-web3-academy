@@ -65,6 +65,13 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 
+const IconBtn = styled(IconButton)(({ theme }) => ({
+  color: '#525960',
+  '&:hover':{
+    color: '#242424'
+  }
+}));
+
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
@@ -116,14 +123,13 @@ export default function Home() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" backgroundcolor="white">
           <Toolbar varient="dense">
-            <IconButton
+            <IconBtn
               size="large"
               edge="start"
-              color="inherit"
               aria-label="open drawer"
             >
               <MenuIcon />
-            </IconButton>
+            </IconBtn>
             <Image
               padding="0"
               sx={{ display: { xs: "block" } }}
@@ -134,7 +140,7 @@ export default function Home() {
             />
             <Search>
               <SearchIconWrapper>
-                <SearchIcon />
+                <SearchIcon sx={{color: '#525960'}} />
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="Search…"
@@ -143,42 +149,38 @@ export default function Home() {
             </Search>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: "flex" }}>
-              <IconButton
+              <IconBtn
                 size="large"
                 aria-label="Search"
-                color="inherit"
               >
                 <SearchIcon />
-              </IconButton>
-              <IconButton
+              </IconBtn>
+              <IconBtn
                 size="large"
                 aria-label="show 4 new mails"
-                color="inherit"
               >
                 <Badge badgeContent={4} color="error">
                   <MailIconOutlined />
                 </Badge>
-              </IconButton>
-              <IconButton
+              </IconBtn>
+              <IconBtn
                 size="large"
                 aria-label="show 17 new notifications"
-                color="inherit"
               >
                 <Badge badgeContent={17} color="error">
                   <NotificationsIcon />
                 </Badge>
-              </IconButton>
-              <IconButton
+              </IconBtn>
+              <IconBtn
                 size="large"
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
-                color="inherit"
               >
                 <AccountCircle />
-              </IconButton>
+              </IconBtn>
             </Box>
           </Toolbar>
         </AppBar>
